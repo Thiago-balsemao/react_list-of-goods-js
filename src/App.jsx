@@ -37,7 +37,15 @@ export const App = () => {
   };
 
   const handleReverse = () => {
-    const reversedGoods = [...goods].reverse();
+    let reversedGoods;
+
+    if (activeButton === 'alphabetically') {
+      reversedGoods = [...goods].reverse();
+    } else if (activeButton === 'length') {
+      reversedGoods = [...goods].reverse();
+    } else {
+      reversedGoods = [...goods].reverse();
+    }
 
     setGoods(reversedGoods);
     setIsReversed(!isReversed);
