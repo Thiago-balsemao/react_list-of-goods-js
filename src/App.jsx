@@ -37,10 +37,17 @@ export const App = () => {
   };
 
   const handleReverse = () => {
-    const reversedGoods = [...goods].reverse();
+    let reversedGoods;
+
+    if (activeButton === 'alphabetically') {
+      reversedGoods = [...goods].sort().reverse();
+    } else if (activeButton === 'length') {
+      reversedGoods = [...goods].sort((a, b) => a.length - b.length).reverse();
+    } else {
+      reversedGoods = [...goods].reverse();
+    }
 
     setGoods(reversedGoods);
-    // Maintain the active sorting mode
     setIsReversed(!isReversed);
   };
 
