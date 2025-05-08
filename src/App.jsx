@@ -40,6 +40,7 @@ export const App = () => {
     const reversedGoods = [...goods].reverse();
 
     setGoods(reversedGoods);
+    // Maintain the active sorting mode
     setIsReversed(!isReversed);
   };
 
