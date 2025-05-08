@@ -37,15 +37,7 @@ export const App = () => {
   };
 
   const handleReverse = () => {
-    let reversedGoods;
-
-    if (activeButton === 'alphabetically') {
-      reversedGoods = [...goods].sort().reverse();
-    } else if (activeButton === 'length') {
-      reversedGoods = [...goods].sort((a, b) => a.length - b.length).reverse();
-    } else {
-      reversedGoods = [...goods].reverse();
-    }
+    const reversedGoods = [...goods].reverse();
 
     setGoods(reversedGoods);
     setIsReversed(!isReversed);
